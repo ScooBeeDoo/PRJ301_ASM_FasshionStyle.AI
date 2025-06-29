@@ -13,6 +13,7 @@ controller\AddProductServlet.class
 controller\OrderHistoryServlet.class
 model\User.class
 controller\DeleteProductServlet.class
+controller\ViewSellerProductsServlet.class
 controller\LoginServlet.class
 controller\CheckoutServlet.class
 controller\SearchProductServlet.class

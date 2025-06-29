@@ -12,10 +12,8 @@ import java.io.IOException;
 public class UpdateProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         request.setCharacterEncoding("UTF-8");
 
-        // Lấy dữ liệu từ form
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         String description = request.getParameter("description");
@@ -24,7 +22,6 @@ public class UpdateProductServlet extends HttpServlet {
         String category = request.getParameter("category");
         int stock = Integer.parseInt(request.getParameter("stock"));
 
-        // Tạo đối tượng Product mới
         Product p = new Product();
         p.setId(id);
         p.setName(name);
@@ -34,14 +31,10 @@ public class UpdateProductServlet extends HttpServlet {
         p.setCategory(category);
         p.setStock(stock);
 
-        // Gọi DAO để cập nhật
         ProductDAO dao = new ProductDAO();
         dao.updateProduct(p);
 
-        // Redirect về danh sách
         response.sendRedirect("view-products");
-        
-        System.out.println("Updating product with ID: " + id);
-
     }
 }
+ 
